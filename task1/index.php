@@ -18,7 +18,7 @@ $homies = [
     <th>Age</th>
   </tr>
 
-  <?php foreach($homies as $h): ?>
+  <?php foreach($homies as $k=>$h): ?>
   <tr>
     <td><?=$h['name']?></td>
     <td><?=$h['age']?></td>
@@ -34,9 +34,9 @@ function loger($word){
 
 $words = ['Radiant','Other','Stacks','Good','Unique'];
 
-foreach($words as $word){
-  loger($word);
-  echo "save to log $word".'<br>';
-  usleep(mt_rand(500000, 2000000));
-};
+// foreach($words as $word){
+//   loger($word);
+//   echo "save to log $word".'<br>';
+//   usleep(mt_rand(500000, 2000000));
+// };
 ?>
