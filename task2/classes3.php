@@ -2,19 +2,19 @@
 
 
 class Cow {
-    public $legs = 4;
-    function say(){
-        NowTime();
+    protected $legs = 4;
+    protected function say(){
+        nowTime();
         echo " МУ".PHP_EOL;
     }
-    function get_legs(){
+    protected function get_legs(){
         echo "у меня $this->legs ног";
     }
 }
 
 
 class Doctor {
-    function operate(&$animal){
+    public function operate($animal){
         if ($animal->legs>0){
             $animal->legs -= 1;
         } else{

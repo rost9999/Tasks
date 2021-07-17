@@ -4,23 +4,20 @@
 
 
 class Animal {
-    function say(){
-
+    public $voice = 'Grr';
+    public function say(){
+        echo "$this->voice";
     }
 }
 
 
 class Cow extends Animal{
-    function say(){
-        echo "МУ";
-    }
+    public $voice = 'МУ';
 }
 
 
 class Dog extends Animal{
-    function say(){
-        echo "ГАВ";
-    }
+    public $voice = 'ГАВ';
 }
 
 

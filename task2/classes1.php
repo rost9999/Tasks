@@ -6,13 +6,13 @@ function NowTime(){
 }
 
 class Cow {
-    function say(){
+    protected function say(){
         echo "МУ".PHP_EOL;
     }
 }
 
 class Dog {
-    function say(){
+    protected function say(){
         echo "ГАВ".PHP_EOL;
     }
 }

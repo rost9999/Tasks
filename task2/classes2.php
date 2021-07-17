@@ -1,11 +1,11 @@
 <?php
-function NowTime(){
+function nowTime(){
     echo "Сейчас: ".date("G:m:s");
 }
 
 class Cow {
     protected $legs = 4;
-    function say(){
+    protected function say(){
         NowTime();
         echo " МУ".PHP_EOL;
     }
@@ -38,13 +38,13 @@ $dog1 = new Dog;
 $nird1 = new Bird;
 
 $cow1->say();
-echo "<br>";
+echo "\n";
 $dog1->say();
-echo "<br>";
+echo "\n";
 $cow1->get_legs();
-echo "<br>";
+echo "\n";
 $dog1->get_legs();
-echo "<br>";
+echo "\n";
 $nird1->get_legs();
 
 
