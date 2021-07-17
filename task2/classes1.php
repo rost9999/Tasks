@@ -1,7 +1,7 @@
 <?php
 
 
-function NowTime(){
+function nowTime(){
     echo "Сейчас: ".date("G:m:s");
 }
 

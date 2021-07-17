@@ -2,19 +2,19 @@
 
 
 class Cow {
-    protected $legs = 4;
-    protected function say(){
+    public $legs = 4;
+    public function say(){
         nowTime();
         echo " МУ".PHP_EOL;
     }
-    protected function get_legs(){
+    public function get_legs(){
         echo "у меня $this->legs ног";
     }
 }
 
 
 class Doctor {
-    public function operate($animal){
+    public function operate(Cow $animal){
         if ($animal->legs>0){
             $animal->legs -= 1;
         } else{
@@ -29,21 +29,21 @@ $cow2 = new Cow;
 $doctor1 = new Doctor;
 
 $cow1->get_legs();
-echo "<br>";
+echo "\n";
 $cow2->get_legs();
-echo "<br>";
+echo "\n";
 $doctor1->operate($cow2);
 $doctor1->operate($cow2);
 $cow1->get_legs();
-echo "<br>";
+echo "\n";
 $cow2->get_legs();
-echo "<br>";
+echo "\n";
 $doctor1->operate($cow2);
 $doctor1->operate($cow2);
 $cow1->get_legs();
-echo "<br>";
+echo "\n";
 $cow2->get_legs();
-echo "<br>";
+echo "\n";
 try {
     $doctor1->operate($cow2);
 } catch (Exception $e) {

@@ -25,5 +25,5 @@ $cow1 = new Cow;
 $dog1 = new Dog;
 
 $cow1->say();
-echo "<br>";
+echo "\n";
 $dog1->say();
