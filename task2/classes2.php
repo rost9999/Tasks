@@ -1,33 +1,47 @@
 <?php
-function nowTime(){
-    echo "Сейчас: ".date("G:m:s");
+function nowTime()
+{
+    echo 'Сейчас: ' . date("G:m:s");
 }
 
-class Cow {
+class Cow
+{
     protected $legs = 4;
-    protected function say(){
+
+    protected function say()
+    {
         NowTime();
-        echo " МУ".PHP_EOL;
+        echo " МУ" . PHP_EOL;
     }
-    function get_legs(){
+
+    function get_legs()
+    {
         echo "у меня $this->legs ног";
     }
 }
 
-class Dog {
+class Dog
+{
     protected $legs = 4;
-    function say(){
+
+    function say()
+    {
         NowTime();
-        echo " ГАВ".PHP_EOL;
+        echo " ГАВ" . PHP_EOL;
     }
-    function get_legs(){
+
+    function get_legs()
+    {
         echo "у меня $this->legs ног";
     }
 }
 
-class Bird {
+class Bird
+{
     protected $legs = 2;
-    function get_legs(){
+
+    function get_legs()
+    {
         echo "у меня $this->legs ног";
     }
 }

@@ -1,19 +1,23 @@
 <?php
 
-
-function nowTime(){
-    echo "Сейчас: ".date("G:m:s");
+function nowTime()
+{
+    echo 'Сейчас: ' . date("Y-m-d H:i:s");
 }
 
-class Cow {
-    protected function say(){
-        echo "МУ".PHP_EOL;
+class Cow
+{
+    protected function say()
+    {
+        echo 'МУ' . PHP_EOL;
     }
 }
 
-class Dog {
-    protected function say(){
-        echo "ГАВ".PHP_EOL;
+class Dog
+{
+    protected function say()
+    {
+        echo 'ГАВ' . PHP_EOL;
     }
 }
 

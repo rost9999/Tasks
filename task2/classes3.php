@@ -1,26 +1,33 @@
 <?php
 
 
-class Cow {
+class Cow
+{
     public $legs = 4;
-    public function say(){
+
+    public function say()
+    {
         nowTime();
-        echo " МУ".PHP_EOL;
+        echo ' МУ' . PHP_EOL;
     }
-    public function get_legs(){
+
+    public function get_legs()
+    {
         echo "у меня $this->legs ног";
     }
 }
 
 
-class Doctor {
-    public function operate(Cow $animal){
-        if ($animal->legs>0){
+class Doctor
+{
+    public function operate(Cow $animal)
+    {
+        if ($animal->legs > 0) {
             $animal->legs -= 1;
-        } else{
+        } else {
             throw new Exception('неоперируемая корова');
         }
-        
+
     }
 }
 
