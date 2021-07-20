@@ -1,26 +1,38 @@
 <?php
 
-$db = new PDO('mysql:host=localhost;dbname=task3', 'root', 'qwer1234');
+class  ArticlesController
+{
 
-class  ArticlesController {
-// create read update delete
-    function read($id=0){
-        $stmt = $db->prepare("SELECT * FROM categories WHERE `id` = ?");
-        $stmt->execute([$id]);
-        while ($row = $stmt->fetch(PDO::FETCH_LAZY)) {
-            echo 'Category name: '.$row->name;
-}
-    }
-    
-    function create($id){
-
+    public function __construct()
+    {
+        $this->db = new PDO('mysql:host=localhost;dbname=task3', 'root', 'qwer1234');
     }
 
-    function update($id){
+    function read($id = '')
+    {
+        if ($id == '') {
+            $stmt = $this->db->query("SELECT * FROM `articles`");
+        } else {
+            $stmt = $this->db->query("SELECT * FROM `articles` WHERE `id` = $id");
+        }
+        echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
+    }
+
+    function create($data)
+    {
+        $stmt = $this->db->prepare("INSERT INTO articles (name, text) VALUES (:name, :text)");
+        $stmt->execute(['name' =>$data['name'],'text'=>$data['text']]);
+        var_dump('post was created');
 
     }
 
-    function delete($id){
-        
+    function update($id)
+    {
+
+    }
+
+    function delete($id)
+    {
+
     }
 }
