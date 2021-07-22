@@ -22,17 +22,21 @@ class  ArticlesController
     {
         $stmt = $this->db->prepare("INSERT INTO articles (name, text) VALUES (:name, :text)");
         $stmt->execute(['name' =>$data['name'],'text'=>$data['text']]);
-        var_dump('post was created');
+        echo('post was created');
 
     }
 
-    function update($id)
+    function update($id,$data)
     {
-
+        $stmt = $this->db->prepare("UPDATE articles SET name = :name, text = :text WHERE id = $id");
+        $stmt->execute(['name' =>$data['name'],'text'=>$data['text']]);
+        echo ('post was updated');
     }
 
     function delete($id)
     {
-
+        $stmt = $this->db->prepare("DELETE FROM articles WHERE id = $id");
+        $stmt->execute(['id' =>$id]);
+        echo ('post was deleted');
     }
 }

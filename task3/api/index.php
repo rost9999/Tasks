@@ -20,6 +20,8 @@ if ($method == 'GET') {
 } elseif ($method == 'POST') {
     $controler->create($data);
 }elseif ($method == 'PUT'){
-
+    $controler->update($id,$data);
+} elseif($method == 'DELETE'){
+    $controler->delete($id);
 }
 
