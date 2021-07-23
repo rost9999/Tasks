@@ -12,32 +12,43 @@
     <title>Привет мир!</title>
 </head>
 <body>
-<form action="./src/action.php" method="post">
+<form action="" method="post">
     <div class="container">
         <div class="form-group">
             <input type="text" class="form-control" placeholder="name" name="name">
         </div>
         <div class="form-group">
-            <textarea class="form-control" placeholder="textarea" name="text" ></textarea>
+            <textarea class="form-control" placeholder="textarea" name="text"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </div>
 </form>
-
 <?php
-$data = ($_POST);
-
-function create($data)
-{
-    $db = new PDO('mysql:host=localhost;dbname=task3', 'root', 'qwer1234');
+$db = new PDO('mysql:host=localhost;dbname=task3', 'root', 'qwer1234');
+if($_POST){
     $stmt = $db->prepare("INSERT INTO articles (name, text) VALUES (:name, :text)");
-    $stmt->execute(['name' =>$data['name'],'text'=>$data['text']]);
-    echo('post was created');
-
+    $stmt->execute(['name' => $_POST['name'], 'text' => $_POST['text']]);
 }
-
-create($data);
-
+$stmt = $db->query("SELECT * FROM `articles`");
+$alldata = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
+<table class="table">
+    <thead>
+    <tr>
+        <?php foreach(array_keys($alldata[0]) as $key=>$value): ?>
+        <th scope="col"><?=$value;?></th>
+        <?php endforeach; ?>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach($alldata as $key=>$value): ?>
+    <tr>
+        <th scope="row"><?=$value['id'];?></th>
+        <td><?=$value['name'];?></td>
+        <td><?=$value['text'];?></td>
+    </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
 </body>
 </html>
