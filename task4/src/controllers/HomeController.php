@@ -2,6 +2,7 @@
 
 namespace task4\controllers;
 
+
 use task4\repositorys\ArticleRepository;
 
 class HomeController
@@ -14,7 +15,8 @@ class HomeController
     public function default()
     {
         $articles = $this->pdo->get_all();
-        include "pages/home.php";
+
+        include "./src/pages/home.php";
 
 
 

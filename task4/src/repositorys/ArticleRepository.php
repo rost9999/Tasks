@@ -1,12 +1,13 @@
 <?php
 
 namespace task4\repositorys;
+Use PDO;
 
 class ArticleRepository
 {
     public function __construct()
     {
-        $this->db = new PDO('mysql:host=localhost;dbname=task4', 'root', 'qwer1234');
+        $this->db = new PDO('mysql:host=localhost;dbname=task3', 'root', 'qwer1234');
     }
 
     public function get_all(){

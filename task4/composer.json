@@ -1,4 +1,5 @@
 {
+    "": "src",
     "name": "admin/task4",
     "authors": [
         {
@@ -6,10 +7,5 @@
             "email": "wr2st12@gmail.com"
         }
     ],
-    "require": {},
-    "autoload": {
-        "psr-4": {
-            "task4\\": "src/"
-        }
-    }
+    "require": {}
 }
