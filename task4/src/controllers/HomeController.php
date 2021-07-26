@@ -1,24 +1,22 @@
 <?php
 
-namespace task4\controllers;
+namespace controllers;
 
-
-use task4\repositorys\ArticleRepository;
+use repositories\ArticleRepository;
 
 class HomeController
 {
+    protected $articleRepository;
+
     public function __construct()
     {
-        $this->pdo = new ArticleRepository;
+        $this->articleRepository = new ArticleRepository();
     }
 
     public function default()
     {
-        $articles = $this->pdo->get_all();
+        $articles = $this->articleRepository->get_all();
 
         include "./src/pages/home.php";
-
-
-
     }
 }

@@ -1,3 +1,6 @@
+<?php
+/** @var array $articles */
+?>
 <!doctype html>
 <html lang="ru">
 <head>

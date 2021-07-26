@@ -2,9 +2,7 @@
 
 require_once "./vendor/autoload.php";
 
-use task4\controllers\HomeController;
+use controllers\HomeController;
 
-$controle = new HomeController;
-$controle->default();
-
-
+$controller = new HomeController;
+$controller->default();

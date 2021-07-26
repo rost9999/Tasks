@@ -1,9 +1,9 @@
 <?php
 
-namespace task4\repositorys;
+namespace repositories;
 Use PDO;
 
-class ArticleRepository
+class Articlerepository
 {
     public function __construct()
     {
