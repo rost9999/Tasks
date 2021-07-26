@@ -6,5 +6,10 @@
             "email": "wr2st12@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "task4\\": "src/"
+        }
+    }
 }
